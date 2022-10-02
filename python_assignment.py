@@ -21,6 +21,58 @@ table_assign = {
         "Table 3": "Not assigned",
         "Table 4": "Not assigned"
 }
-whateva()
-option = input('Enter your option: ')
-print(option)
+
+while True:
+    whateva()
+    option = input('Enter your option: ')
+    print("")
+    
+    if option == "0":
+        ticket += 1
+        queue.append(ticket)
+
+    elif option == "1":
+        if len(queue) == 0:
+            print("ERROR, ENTER '0' TO ISSUE NEW TICKET NUMBER!!!")
+            continue #make table assign disappear but keep whateva
+        else:
+            ticket = queue.pop(0)
+            table_assign["Table 1"] = ticket
+            print(table_assign)
+    
+    elif option == "2":
+        if len(queue) == 0:
+            print("ERROR, ENTER '0' TO ISSUE NEW TICKET NUMBER!!!")
+            continue
+        else:
+            ticket = queue.pop(0)
+            table_assign["Table 2"] = ticket
+            print(table_assign)
+    
+    elif option == "3":
+        if len(queue) == 0:
+            print("ERROR, ENTER '0' TO ISSUE NEW TICKET NUMBER!!!")
+            continue
+        else:
+            ticket = queue.pop(0)
+            table_assign["Table 3"] = ticket
+            print(table_assign)
+    
+    elif option == "4":
+        if len(queue) == 0:
+            print("ERROR, ENTER '0' TO ISSUE NEW TICKET NUMBER!!!")
+            continue
+        else:
+            ticket = queue.pop(0)
+            table_assign["Table 4"] = ticket
+            print(table_assign)
+    
+    elif option == "5":
+        print("Quitting program...")
+        break
+
+    else:
+        if len(queue) == 0:
+            print("ERROR, ENTER '0' TO ISSUE NEW TICKET NUMBER!!!")
+        else:
+            print("Invalid option, try again...")
