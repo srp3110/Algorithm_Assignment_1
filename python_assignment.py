@@ -14,6 +14,16 @@ def whateva():
     print(f'''Ticket in queue: {queue}''')
     print(f'''Table assignment: {table_assign}''')
 
+def add_ticket(ticket):
+    queue.append(ticket)
+
+def table_queue(table_number):
+    if len(queue) == 0:
+        print("ERROR, ENTER '0' TO ISSUE NEW TICKET NUMBER!!!")
+    else:
+        new_table = "Table" + table_number
+        table_assign[new_table] = queue.pop(0)
+
 queue = []
 table_assign = {
         "Table 1": "Not assigned",
@@ -29,47 +39,14 @@ while True:
     
     if option == "0":
         ticket += 1
-        queue.append(ticket)
+        add_ticket(ticket)
 
-    elif option == "1":
-        if len(queue) == 0:
-            print("ERROR, ENTER '0' TO ISSUE NEW TICKET NUMBER!!!") 
-            #make table assign disappear but keep whateva
-        else:
-            ticket = queue.pop(0)
-            table_assign["Table 1"] = ticket
-            print(table_assign)
-    
-    elif option == "2":
-        if len(queue) == 0:
-            print("ERROR, ENTER '0' TO ISSUE NEW TICKET NUMBER!!!")
-        else:
-            ticket = queue.pop(0)
-            table_assign["Table 2"] = ticket
-            print(table_assign)
-    
-    elif option == "3":
-        if len(queue) == 0:
-            print("ERROR, ENTER '0' TO ISSUE NEW TICKET NUMBER!!!")
-        else:
-            ticket = queue.pop(0)
-            table_assign["Table 3"] = ticket
-            print(table_assign)
-    
-    elif option == "4":
-        if len(queue) == 0:
-            print("ERROR, ENTER '0' TO ISSUE NEW TICKET NUMBER!!!")
-        else:
-            ticket = queue.pop(0)
-            table_assign["Table 4"] = ticket
-            print(table_assign)
+    elif option == "1" or option == "2" or option == "3" or option == "4":
+        table_queue(option)
     
     elif option == "5":
         print("Quitting program...")
         break
 
     else:
-        if len(queue) == 0:
-            print("ERROR, ENTER '0' TO ISSUE NEW TICKET NUMBER!!!")
-        else:
-            print("Invalid option, try again...")
+        print("Invalid option, try again...")
