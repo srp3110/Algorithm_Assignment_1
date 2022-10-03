@@ -33,8 +33,8 @@ while True:
 
     elif option == "1":
         if len(queue) == 0:
-            print("ERROR, ENTER '0' TO ISSUE NEW TICKET NUMBER!!!")
-            continue #make table assign disappear but keep whateva
+            print("ERROR, ENTER '0' TO ISSUE NEW TICKET NUMBER!!!") 
+            #make table assign disappear but keep whateva
         else:
             ticket = queue.pop(0)
             table_assign["Table 1"] = ticket
@@ -43,7 +43,6 @@ while True:
     elif option == "2":
         if len(queue) == 0:
             print("ERROR, ENTER '0' TO ISSUE NEW TICKET NUMBER!!!")
-            continue
         else:
             ticket = queue.pop(0)
             table_assign["Table 2"] = ticket
@@ -52,7 +51,6 @@ while True:
     elif option == "3":
         if len(queue) == 0:
             print("ERROR, ENTER '0' TO ISSUE NEW TICKET NUMBER!!!")
-            continue
         else:
             ticket = queue.pop(0)
             table_assign["Table 3"] = ticket
@@ -61,7 +59,6 @@ while True:
     elif option == "4":
         if len(queue) == 0:
             print("ERROR, ENTER '0' TO ISSUE NEW TICKET NUMBER!!!")
-            continue
         else:
             ticket = queue.pop(0)
             table_assign["Table 4"] = ticket
