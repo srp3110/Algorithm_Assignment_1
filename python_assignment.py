@@ -21,7 +21,7 @@ def table_queue(table_number):
     if len(queue) == 0:
         print("ERROR, ENTER '0' TO ISSUE NEW TICKET NUMBER!!!")
     else:
-        new_table = "Table" + table_number
+        new_table = "Table " + table_number
         table_assign[new_table] = queue.pop(0)
 
 queue = []
