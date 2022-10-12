@@ -10,7 +10,7 @@ Enter 0 to 5 for following options:
 5 -> Quit program
 ''')
 
-def whateva():
+def prnt_table_ticket():
     print(f'''Ticket in queue: {queue}''')
     print(f'''Table assignment: {table_assign}''')
 
@@ -33,7 +33,7 @@ table_assign = {
 }
 
 while True:
-    whateva()
+    prnt_table_ticket()
     option = input('Enter your option: ')
     print("")
     
